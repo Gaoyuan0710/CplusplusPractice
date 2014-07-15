@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Justfun by Gaoyuan0710</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Justfun</h1>
+        <h2>Some basic operatios of GitHub</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/Gaoyuan0710/JustFun/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/Gaoyuan0710/JustFun/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/Gaoyuan0710/JustFun" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8Egit" class="anchor" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8Egit"><span class="octicon octicon-link"></span></a>版本控制与Git</h1>
+
+<p>@[西邮Linux兴趣小组][高源 ]</p>
+
+<h4>
+<a name="%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E6%98%AF" class="anchor" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E6%98%AF"><span class="octicon octicon-link"></span></a>名词解释是</h4>
+
+<p><strong>Git</strong> :是一种分布式版本控制系统.
+<strong>版本控制系统</strong>: 本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。这种方法是工程图（engineering drawings）维护（maintenance）的标准做法， 它伴随着工程图从图的诞生一直到图的定型。 版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。这种方法是工程图（engineering drawings）维护（maintenance）的标准做法， 它伴随着工程图从图的诞生一直到图的定。 一种简单的版本控制形式，例如，赋给图的初版一个版本等级“A”。当做了第一次改变后，版本等级改为“B”，以此类推等等。
+<em>版本控制分为</em>:集中式版本控制系统:CVS及SVN分布式版本控制系统:Git
+<strong>版本仓库:</strong> 版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。
+<strong>工作区（Working Directory）</strong>：就是你在电脑里能看到的目录.
+<strong>版本库（Repository）</strong>：工作区有一个隐藏目录“.git”，这个不算工作区，而是Git的版本库。Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
+
+<h4>
+<a name="git%E7%A0%B4%E5%A3%B3%E8%AE%B0" class="anchor" href="#git%E7%A0%B4%E5%A3%B3%E8%AE%B0"><span class="octicon octicon-link"></span></a>Git破壳记</h4>
+
+<ul>
+<li>
+<strong>2005年4月3日</strong> ：Linux决定开发Git</li>
+<li>
+<strong>2005年4月6日</strong> ：Git项目正式在开源社区发布</li>
+<li>
+<strong>2005年4月7日</strong> ：Git此时就已经能作为自己的项目管理工具了</li>
+<li>
+<strong>2005年4月18日</strong>：Git产生第一个多分支合并</li>
+<li>
+<strong>2005年4月29日</strong>：Git的性能到达了Linux的预期</li>
+<li>
+<strong>2005年6月16日</strong>：linux内核2.6.12发布，此时的Git已经作为内核的版本控制工具了</li>
+<li>*。。此处略去N个字。。。</li>
+</ul><h4>
+<a name="%E5%AE%89%E8%A3%85" class="anchor" href="#%E5%AE%89%E8%A3%85"><span class="octicon octicon-link"></span></a>安装</h4>
+
+<blockquote>
+<p>Debian系
+               <strong>apt-get install git</strong>
+Redhat系
+             **  yum install git**</p>
+</blockquote>
+
+<h4>
+<a name="%E9%85%8D%E7%BD%AE" class="anchor" href="#%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>配置</h4>
+
+<blockquote>
+<p>首先在本地创建ssh key：</p>
+
+<blockquote>
+<p>ssh-keygen -t rsa -C "你的邮箱"  </p>
+</blockquote>
+
+<p>之后会要求确认路径和输入密码，采取默认就可以，一路回车。成功后就会在～/下生成.ssh文件，进入后复制id_rsa.pub里面的key.进入github,在账户设置里选择Add ssh keys，根据自己情况填入Titile.
+其次设置user.name和user.email</p>
+
+<blockquote>
+<p><strong>git config  --global  usr.name 用户名</strong>
+<strong>git config  --global  user.email 用户邮箱</strong></p>
+</blockquote>
+</blockquote>
+
+<h4>
+<a name="%E5%88%9B%E5%BB%BA%E6%96%B0%E4%BB%93%E5%BA%93" class="anchor" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E4%BB%93%E5%BA%93"><span class="octicon octicon-link"></span></a>创建新仓库</h4>
+
+<blockquote>
+<p>方法1：
+        git init 仓库名称
+方法2：
+        mkdir 仓库名称
+        cd 仓库名称
+        git init</p>
+
+<p><strong>～添加远程仓库路经：</strong>
+        git remote add origin <a href="mailto:git@github.com">git@github.com</a>:Your GitHub'name/Your repository'name.git
+<strong>～提交给远程仓库：</strong>
+        git push -u origin master
+<strong>~从远程库克隆:</strong>
+        <a href="mailto:git@github.com">git@github.com</a>:Your GitHub'name/Your repository'name.git
+加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+</blockquote>
+
+<h4>
+<a name="%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%8F%90%E4%BA%A4" class="anchor" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%8F%90%E4%BA%A4"><span class="octicon octicon-link"></span></a>添加与提交</h4>
+
+<blockquote>
+<p><strong>～添加到暂存区：</strong>
+        git add &lt;文件名称&gt;
+<strong>～提交到版本库：</strong>
+        git commt -m “标注"   //-m后面输入的是本次提交的说明，可以输入任意内容
+<strong>~命令显示从最近到最远的提交日志</strong>
+        git log
+        git reflog 
+<strong>~显示仓库当前状态：</strong>
+        git status</p>
+</blockquote>
+
+<h4>
+<a name="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D" class="anchor" href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D"><span class="octicon octicon-link"></span></a>版本恢复</h4>
+
+<blockquote>
+<p><strong>~将当前的分支重设到指定的分支</strong>
+        git reset 
+参数
+    --hard  重设（reset） index和working directory，自从以来在working directory中的任何改变都被丢弃，并把HEAD指向
+     --soft：index和working directory中的内容不作任何改变，仅仅把HEAD指向。这个模式的效果是，执行完毕后，自从以来的所有改变都会显示在git status的"Changes to be committed"中
+     --mixed：仅reset index，但是不reset working directory。这个模式是默认模式，即当不显示告知git reset模式时，会使用mixed模式。这个模式的效果是，working directory中文件的修改都会被保留，不会丢弃，但是也不会被标记成"Changes to be committed"，但是会打出什么还未被更新的报告
+     --merge</p>
+</blockquote>
+
+<h5>
+<a name="git-checkout---%E6%96%87%E4%BB%B6%E5%90%8D-%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9" class="anchor" href="#git-checkout---%E6%96%87%E4%BB%B6%E5%90%8D-%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="octicon octicon-link"></span></a>git checkout --文件名 //丢弃工作区的修改</h5>
+
+<h5>
+<a name="git-checkout-%E5%90%8D%E7%A7%B0--%E5%88%87%E6%8D%A2%E7%9A%84%E5%88%86%E6%94%AF" class="anchor" href="#git-checkout-%E5%90%8D%E7%A7%B0--%E5%88%87%E6%8D%A2%E7%9A%84%E5%88%86%E6%94%AF"><span class="octicon octicon-link"></span></a>git checkout 名称  //切换的分支</h5>
+
+<h4>
+<a name="%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF" class="anchor" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="octicon octicon-link"></span></a>创建与合并分支</h4>
+
+<blockquote>
+<p><strong>查看分支： ** 
+            git branch
+**创建分支</strong>：
+            git branch name
+<strong>切换分支</strong>： 
+            git checkout name
+<strong>创建+切换分支： **
+            git checkout -b name
+**合并某分支到当前分支：</strong>
+            git merge name
+<strong>删除分支：</strong>
+            git branch -d name</p>
+</blockquote>
+
+<h4>
+<a name="%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81" class="anchor" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="octicon octicon-link"></span></a>解决冲突</h4>
+
+<blockquote>
+<p><strong>将分支合并到当前分支</strong>
+            git merge 
+<strong>查看分支合并图</strong>
+            git log --graph</p>
+</blockquote>
+
+<h3>
+<a name="%E6%BC%94%E7%A4%BA" class="anchor" href="#%E6%BC%94%E7%A4%BA"><span class="octicon octicon-link"></span></a>演示</h3>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
