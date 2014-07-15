@@ -84,8 +84,8 @@ Redhat系
 其次设置user.name和user.email</p>
 
 <blockquote>
-<p><strong>git config  --global  usr.name 用户名</strong>
-<strong>git config  --global  user.email 用户邮箱</strong></p>
+<p><strong>git config  --global  usr.name 用户名</strong></p>
+<p><strong>git config  --global  user.email 用户邮箱</strong></p>
 </blockquote>
 </blockquote>
 
@@ -93,48 +93,48 @@ Redhat系
 <a name="%E5%88%9B%E5%BB%BA%E6%96%B0%E4%BB%93%E5%BA%93" class="anchor" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E4%BB%93%E5%BA%93"><span class="octicon octicon-link"></span></a>创建新仓库</h4>
 
 <blockquote>
-<p>方法1：
-        git init 仓库名称
-方法2：
-        mkdir 仓库名称
-        cd 仓库名称
-        git init</p>
+<p>方法1：</p>
+<p>        git init 仓库名称</p>
+<p>方法2：</p>
+<p>        mkdir 仓库名称</p>
+<p>        cd 仓库名称</p>
+<p>        git init</p>
 
-<p><strong>～添加远程仓库路经：</strong>
-        git remote add origin <a href="mailto:git@github.com">git@github.com</a>:Your GitHub'name/Your repository'name.git
-<strong>～提交给远程仓库：</strong>
-        git push -u origin master
-<strong>~从远程库克隆:</strong>
-        <a href="mailto:git@github.com">git@github.com</a>:Your GitHub'name/Your repository'name.git
-加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<p><strong>～添加远程仓库路经：</strong></p>
+<p>        git remote add origin git@github.com:Your GitHub'name/Your repository'name.git</p>
+<p><strong>～提交给远程仓库：</strong></p>
+<p>        git push -u origin master</p>
+<p><strong>~从远程库克隆:</strong></p>
+<p>        git clone  git@github.com:Your GitHub'name/Your repository'name.git</p>
+<p>加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
 </blockquote>
 
 <h4>
 <a name="%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%8F%90%E4%BA%A4" class="anchor" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%8F%90%E4%BA%A4"><span class="octicon octicon-link"></span></a>添加与提交</h4>
 
 <blockquote>
-<p><strong>～添加到暂存区：</strong>
-        git add &lt;文件名称&gt;
-<strong>～提交到版本库：</strong>
-        git commt -m “标注"   //-m后面输入的是本次提交的说明，可以输入任意内容
-<strong>~命令显示从最近到最远的提交日志</strong>
-        git log
-        git reflog 
-<strong>~显示仓库当前状态：</strong>
-        git status</p>
+<p><strong>～添加到暂存区：</strong></p>
+<p>        git add &lt;文件名称&gt;</p>
+<p><strong>～提交到版本库：</strong></p>
+<p>        git commt -m “标注"   //-m后面输入的是本次提交的说明，可以输入任意内容</p>
+<p><strong>~命令显示从最近到最远的提交日志</strong></p>
+<p>        git log</p>
+<p>        git reflog </p>
+<p><strong>~显示仓库当前状态：</strong></p>
+<p>        git status</p>
 </blockquote>
 
 <h4>
 <a name="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D" class="anchor" href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D"><span class="octicon octicon-link"></span></a>版本恢复</h4>
 
 <blockquote>
-<p><strong>~将当前的分支重设到指定的分支</strong>
-        git reset 
-参数
-    --hard  重设（reset） index和working directory，自从以来在working directory中的任何改变都被丢弃，并把HEAD指向
-     --soft：index和working directory中的内容不作任何改变，仅仅把HEAD指向。这个模式的效果是，执行完毕后，自从以来的所有改变都会显示在git status的"Changes to be committed"中
-     --mixed：仅reset index，但是不reset working directory。这个模式是默认模式，即当不显示告知git reset模式时，会使用mixed模式。这个模式的效果是，working directory中文件的修改都会被保留，不会丢弃，但是也不会被标记成"Changes to be committed"，但是会打出什么还未被更新的报告
-     --merge</p>
+<p><strong>~将当前的分支重设到指定的分支</strong></p>
+<p>        git reset </p>
+<p>参数</p>
+<p>    --hard  重设（reset） index和working directory，自从以来在working directory中的任何改变都被丢弃，并把HEAD指向</p>
+<p>     --soft：index和working directory中的内容不作任何改变，仅仅把HEAD指向。这个模式的效果是，执行完毕后，自从以来的所有改变都会显示在git status的"Changes to be committed"中</p>
+<p>     --mixed：仅reset index，但是不reset working directory。这个模式是默认模式，即当不显示告知git reset模式时，会使用mixed模式。这个模式的效果是，working directory中文件的修改都会被保留，不会丢弃，但是也不会被标记成"Changes to be committed"，但是会打出什么还未被更新的报告</p>
+<p>     --merge</p>
 </blockquote>
 
 <h5>
@@ -147,28 +147,28 @@ Redhat系
 <a name="%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF" class="anchor" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="octicon octicon-link"></span></a>创建与合并分支</h4>
 
 <blockquote>
-<p><strong>查看分支： ** 
-            git branch
-**创建分支</strong>：
-            git branch name
-<strong>切换分支</strong>： 
-            git checkout name
-<strong>创建+切换分支： **
-            git checkout -b name
-**合并某分支到当前分支：</strong>
-            git merge name
-<strong>删除分支：</strong>
-            git branch -d name</p>
+<p><strong>查看分支： ** </p>
+<p>            git branch</p>
+<p>**创建分支</strong>：</p>
+<p>            git branch name</p>
+<p><strong>切换分支</strong>： </p>
+<p>            git checkout name</p>
+<p><strong>创建+切换分支： **</p>
+<p>            git checkout -b name</p>
+<p>**合并某分支到当前分支：</strong></p>
+<p>            git merge name</p>
+<p><strong>删除分支：</strong></p>
+<p>            git branch -d name</p>
 </blockquote>
 
 <h4>
 <a name="%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81" class="anchor" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="octicon octicon-link"></span></a>解决冲突</h4>
 
 <blockquote>
-<p><strong>将分支合并到当前分支</strong>
-            git merge 
-<strong>查看分支合并图</strong>
-            git log --graph</p>
+<p><strong>将分支合并到当前分支</strong></p>
+<p>            git merge </p>
+<p><strong>查看分支合并图</strong></p>
+<p>            git log --graph</p>
 </blockquote>
 
 <h3>
